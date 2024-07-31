@@ -27,7 +27,7 @@ No futuro, está planejada a implementação de uma nova engine chamada **Synaps
 
 Para usar a biblioteca em seu projeto Delphi, siga os passos abaixo:
 
-1. Adicione o diretório `Email4Delphi\scr` ao Search Path do seu projeto.
+1. Adicione o diretório `Email4Delphi\src` ao Search Path do seu projeto.
 2. Inclua `Email4Delphi` na cláusula `uses` do seu projeto.
 3. Aqui está um exemplo de como enviar um email:
 
