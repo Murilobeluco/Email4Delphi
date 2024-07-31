@@ -20,7 +20,7 @@ Se nenhuma variável for definida, a biblioteca ativará a engine **INDY**.
 
 ## Futuras Implementações
 
-No futuro, está planejada a implementação de uma nova engine chamada **Synapse**[Synapse](https://github.com/geby/synapse.git) para o envio de email no Lazarus.
+No futuro, está planejada a implementação de uma nova engine [**Synapse**](https://github.com/geby/synapse.git) para o envio de email no Lazarus.
 
 
 ## Exemplo de Uso
@@ -35,24 +35,24 @@ Para usar a biblioteca em seu projeto Delphi, siga os passos abaixo:
 var
   sendEmail: ISendemail;
 begin
-sendEmail := TSendemail.New
-					  .AddTo('destinatario@dominio.com', 'Nome Destinatário')
-					  .From('remetente@dominio.com', 'Nome Remetente')
-					  .Subject('Assunto do Email')
-					  .AddMessage('Conteúdo do email')
-					  .Host('smtp.dominio.com')
-					  .TLS(True)
-					  .Port(587)
-					  .Auth(True)
-					  .AddAttachment('C:\Caminho\Para\Arquivo.txt')
-					  .UserName('usuario@dominio.com')
-					  .Password('senha-secreta')
-					  .OnLog(
-  procedure(ALog: string)
-  begin
-	writeln(Format('%s', [ALog]));
-  end)
-  .Send;
+  sendEmail := TSendemail.New
+                         .AddTo('destinatario@dominio.com', 'Nome Destinatário')
+                         .From('remetente@dominio.com', 'Nome Remetente')
+                         .Subject('Assunto do Email')
+                         .AddMessage('Conteúdo do email')
+                         .Host('smtp.dominio.com')
+                         .TLS(True)
+                         .Port(587)
+                         .Auth(True)
+                         .AddAttachment('C:\Caminho\Para\Arquivo.txt')
+                         .UserName('usuario@dominio.com')
+                         .Password('senha-secreta')
+                         .OnLog(
+                           procedure(ALog: string)
+                           begin
+                             writeln(Format('%s', [ALog]));
+                          end)
+                         .Send;
 end;
 ```
 
