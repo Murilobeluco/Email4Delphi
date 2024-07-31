@@ -1,0 +1,9 @@
+{
+	"name": "Email4Delphi",
+	"description": "Library de delphi/lazarus para envio de email",
+	"version": "0.0.1",
+	"homepage": "https://github.com/Murilobeluco/Email4Delphi.git",
+	"mainsrc": "./src",
+	"projects": [],
+	"dependencies": {}
+}
