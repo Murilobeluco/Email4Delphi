@@ -1,9 +1,5 @@
 unit Email4Delphi.ICS;
 
-{$IFNDEF USE_SSL}
-  {$MESSAGE FATAL 'Define conditional define "USE_SSL" in the project options'};
-{$ENDIF}
-
 interface
 
 uses
@@ -187,7 +183,7 @@ begin
   if AValue then
     FsslSmtp.AuthType := TSmtpAuthType(2)
   else
-    FsslSmtp.AuthType := TSmtpAuthType(1);
+    FsslSmtp.AuthType := TSmtpAuthType(0);
 end;
 
 function TSendEmailICS.From(const AEmail: string; const AName: string = ''): ISendEmail;
@@ -353,7 +349,10 @@ end;
 function TSendEmailICS.TLS(const AValue: Boolean): ISendEmail;
 begin
   Result := Self;
-  FsslSmtp.SslType := smtpTlsExplicit;
+  if AValue then
+    FsslSmtp.SslType := smtpTlsExplicit
+  else
+    FsslSmtp.SslType := smtpTlsNone;
 end;
 
 function TSendEmailICS.TMessagePriorityToTSmtpPriority(const APriority: TMessagePriority): TSmtpPriority;
